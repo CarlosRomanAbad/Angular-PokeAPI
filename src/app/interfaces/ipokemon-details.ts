@@ -22,7 +22,7 @@ export interface PokemonDetails {
   }
   
   export interface Ability {
-    abilityDetails: AbilityDetails
+    ability: AbilityDetails
     is_hidden: boolean
     slot: number
   }
@@ -347,7 +347,7 @@ export interface PokemonDetails {
   
   export interface Type {
     slot: number
-    typeInfo: TypeDetails
+    type: TypeDetails
   }
   
   export interface TypeDetails {

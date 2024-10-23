@@ -21,9 +21,9 @@
                 <div class="container-fluid">
                     <h6 class="col-6 just mx-auto text-center">Ataques:</h6>
                     <div class="col-12 btn-group borde-habilidades" role="group" aria-label="Ataques">
-                        <!-- @for(ability of abilities ; track ability.indexOf(ability) ){
+                        @for(ability of abilities ; track ability.indexOf(ability) ){
                             <button type="button" class="btn btn-especial fw-bold">{{ability}}</button>
-                        } -->
+                        }
                     </div>
                 </div>
             </div>
@@ -31,11 +31,11 @@
                 <div class="row text-center">
                     <div class="col-12">
                         <h6>Tipo</h6>
-                        <!--   @for(type of pokemonDetails.types ; track type.typeInfo.name){
+                        @for(type of pokemonDetails.types ; track type.type.name){
 
-                            <span class="badge bg-light text-dark">{{type.typeInfo.name}}</span>
+                            <p class="badge bg-light text-dark p-2 m-2">{{type.type.name}}</p>
 
-                        }-->
+                        }
                     </div>
                 </div>
             </div>
