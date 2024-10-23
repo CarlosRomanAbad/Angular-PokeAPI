@@ -5,12 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { PokeListComponent } from './components/poke-list/poke-list.component';
+import { provideHttpClient } from '@angular/common/http';
+import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
+import { HeaderComponent } from './components/header/header.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PokeListComponent
+    PokemonListComponent,
+    HeaderComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +23,8 @@ import { PokeListComponent } from './components/poke-list/poke-list.component';
     NgbModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    provideHttpClient()
   ],
   bootstrap: [AppComponent]
 })

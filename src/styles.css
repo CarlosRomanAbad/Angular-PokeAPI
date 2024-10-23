@@ -2,3 +2,54 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.transparente,
+.card , body{
+    background-color: rgba(248, 208, 158, 0.644);
+    box-shadow: gray;
+    border: 0px solid rgba(156, 89, 26, 0.473);
+}
+
+.card {
+    border: 0px solid rgba(156, 89, 26, 0.473);
+    border-radius: 25px;
+    background-color: rgba(255, 228, 196, 0.603);
+}
+
+.imagen-circulo {
+    background-color: rgba(245, 196, 137, 0.315);
+    margin-right: 15px;
+    border-radius: 300px;
+}
+
+.badge {
+    border: 0, 5px solid black;
+    padding: 5px;
+    padding-bottom: 7px;
+}
+
+.btn-ver-detalles:hover{
+    background-color: rgba(255, 140, 0, 0.486);
+}
+
+.btn-ver-detalles, btn{
+
+    background-color: rgba(255, 188, 106, 0.486);
+    border: 0px solid black;
+
+}
+
+#logo{
+
+    width: 250px; 
+    height: auto;
+    
+}
+
+#search-input {
+    width: 300px; /* Ajusta el ancho según tus necesidades */
+}
+
+#search-button {
+    height: 38px; /* Asegura que el botón tenga la misma altura que el campo de entrada */
+}

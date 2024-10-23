@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row row-cols-2 row-cols-md-4 g-4 px-5" id="pokemon-container">
+
+        @for(pokemon of pokemonList ; track pokemon.name){
+
+        <div class="col py-3">
+            <a href="" class="text-decoration-none text-dark">
+                <div class="card shadow-lg h-100">
+                    <div class="card-body text-center">
+                        <h5 class="card-title mt-2">{{pokemon.name}}</h5>
+                        <p class="card-text">N° {{getPokemonId(pokemon.url)}}</p>
+                        <div class="imagen-circulo shadow-lg">
+                            <img [src]="createImgUrl(getPokemonId(pokemon.url))" class="card-img-top" alt="${pokeName}">
+                        </div>
+
+                        <div class="p-3">
+                            <a class="text-decoration-none text-dark btn-ver-detalles py-1 px-2 rounded-3 border-0 shadow"
+                                href=""><span>Ver Detalles</span></a>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        }
+
+    </div>
+</div>
