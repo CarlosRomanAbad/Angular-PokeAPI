@@ -7,7 +7,7 @@ import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-de
 const routes: Routes = [
 
 { path : 'pokemon' , component : PokemonListComponent },
-{ path : 'pokemon/:id', component : PokemonDetailsComponent },
+{ path : 'pokemon/:id', component : PokemonDetailsComponent , pathMatch : 'full' },
 { path : '' , redirectTo : '/pokemon', pathMatch : 'full' },
 { path : '**', component : PageNotFoundComponent }
 

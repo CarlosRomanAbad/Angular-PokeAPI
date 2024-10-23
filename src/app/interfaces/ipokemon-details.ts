@@ -22,12 +22,12 @@ export interface PokemonDetails {
   }
   
   export interface Ability {
-    ability: Ability2
+    abilityDetails: AbilityDetails
     is_hidden: boolean
     slot: number
   }
   
-  export interface Ability2 {
+  export interface AbilityDetails {
     name: string
     url: string
   }
@@ -347,10 +347,10 @@ export interface PokemonDetails {
   
   export interface Type {
     slot: number
-    type: Type2
+    typeInfo: TypeDetails
   }
   
-  export interface Type2 {
+  export interface TypeDetails {
     name: string
     url: string
   }

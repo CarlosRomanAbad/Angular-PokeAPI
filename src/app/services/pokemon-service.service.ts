@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PokemonResponse } from '../interfaces/ipokemon';
 import { PokemonDetails } from '../interfaces/ipokemon-details';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'

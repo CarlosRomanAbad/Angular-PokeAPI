@@ -1,26 +1,29 @@
-<p>Funciona el detalle. {{numeroPokemon}}</p>
-<!-- <h3 class="text-center">Detalles del pokémon:</h3>
+<div class="container mt-3" id="data-content">
+<h3 class="text-center">Detalles del pokémon:</h3>
             <div class="card mx-auto caja-ppal my-4">
                 <div class="card-header text-center ">
-                    <h5 class="card-title mb-0">${capitalizeFirstLetter(resp.name)} Nº${pokemonId.padStart(4, '0')}</h5>
+                    <h5 class="card-title mb-0">{{pokemonDetails.name}} Nº{{pokemonDetails.id}}</h5>
                 </div>
                 <div class="card-body text-center">
                     <div>
-                        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png"
-                            alt="Foto de ${resp.name}" class="img-fluid float-start fotoPokemon">
+                        <img [src]="createImgUrl()" 
+                            alt="Foto de {{pokemonDetails.name}}" class="img-fluid float-start fotoPokemon">
+                            
                     </div>
                     <ul class="list-group mt-3">
                         <li class="list-group-item mb-1 p-3 fs-6 stats" style="width: 100%;"><strong>Altura:</strong>
-                            ${resp.height} cm</li>
+                            {{pokemonDetails.height}} cm</li>
                         <li class="list-group-item mb-1 p-3 fs-6 stats" style="width: 100%;"><strong>Categoria:
-                            </strong>${capitalizeFirstLetter(resp.species.name)}</li>
+                            </strong>{{pokemonDetails.species.name}}</li>
                         <li class="list-group-item mb-1 p-3 fs-6 stats" style="width: 100%;"><strong>Peso:</strong>
-                            ${resp.weight} kg</li>
+                            {{pokemonDetails.height}} kg</li>
                     </ul>
                 <div class="container-fluid">
                     <h6 class="col-6 just mx-auto text-center">Ataques:</h6>
                     <div class="col-12 btn-group borde-habilidades" role="group" aria-label="Ataques">
-                        ${abilitiesHtml}
+                        <!-- @for(ability of abilities ; track ability.indexOf(ability) ){
+                            <button type="button" class="btn btn-especial fw-bold">{{ability}}</button>
+                        } -->
                     </div>
                 </div>
             </div>
@@ -28,13 +31,18 @@
                 <div class="row text-center">
                     <div class="col-12">
                         <h6>Tipo</h6>
-                        ${typesHtml}
+                        <!--   @for(type of pokemonDetails.types ; track type.typeInfo.name){
+
+                            <span class="badge bg-light text-dark">{{type.typeInfo.name}}</span>
+
+                        }-->
                     </div>
                 </div>
             </div>
 
-            <div class="d-flex justify-content-between mt-3">
+            <!-- <div class="d-flex justify-content-between mt-3">
                 ${pokemonId > 1 ? `<a href="poke-details.html?id=${prevPokemonId}" class="btn">Pokémon Anterior</a>` : '<div></div>'}
                 <a href="poke-details.html?id=${nextPokemonId}" class="btn">Siguiente Pokémon</a>
+            </div> -->
             </div>
- -->
+</div>
