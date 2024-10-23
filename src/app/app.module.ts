@@ -9,13 +9,15 @@ import { provideHttpClient } from '@angular/common/http';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { HeaderComponent } from './components/header/header.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonListComponent,
     HeaderComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    PokemonDetailsComponent
   ],
   imports: [
     BrowserModule,
