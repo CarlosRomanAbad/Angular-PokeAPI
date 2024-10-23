@@ -40,9 +40,20 @@
                 </div>
             </div>
 
-            <!-- <div class="d-flex justify-content-between mt-3">
-                ${pokemonId > 1 ? `<a href="poke-details.html?id=${prevPokemonId}" class="btn">Pokémon Anterior</a>` : '<div></div>'}
-                <a href="poke-details.html?id=${nextPokemonId}" class="btn">Siguiente Pokémon</a>
-            </div> -->
+            <div class="d-flex justify-content-between mt-3">
+                
+                @if(pokemonDetails.id > 1){
+
+                    <a [routerLink]="['/pokemon' , pokemonDetails.id-1]" class="btn">Pokémon Anterior</a>
+
+                }
+                @else{
+
+                    <div></div>
+
+                }
+                
+                <a [routerLink]="['/pokemon' , pokemonDetails.id+1]" class="btn">Siguiente Pokémon</a>
+            </div>
             </div>
 </div>

@@ -35,11 +35,10 @@ export class PokemonDetailsComponent implements OnInit {
 
           this.abilities = this.pokemonDetails.abilities.map(x => x.ability.name);
 
-          //quiero que la lista abilities tenga como máximo 3 elementos
           if (this.abilities.length > 3){
 
             this.abilities = this.abilities.slice(0, 3);
-            
+
           }
 
           this.types = this.pokemonDetails.types.map(x => x.type.name);
