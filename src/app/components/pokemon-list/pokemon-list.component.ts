@@ -11,15 +11,29 @@ export class PokemonListComponent implements OnInit{
 
 pokemonList: Pokemon[] = [];
 
+offset: number = 12;
+
 constructor(private pokemonService: PokemonServiceService ) { }
 
 ngOnInit(): void {
 
-  this.pokemonService.getPokemonList(12).subscribe((x: PokemonResponse) => {
+  this.pokemonService.getPokemonList().subscribe((x: PokemonResponse) => {
 
     this.pokemonList = x.results;
 
   });
+
+}
+
+concatNextPage(): void{
+
+  this.pokemonService.getPokemonList(this.offset).subscribe((x: PokemonResponse) => {
+
+    this.pokemonList.push(...x.results);
+
+  });
+
+  this.offset += 12;
 
 }
 
