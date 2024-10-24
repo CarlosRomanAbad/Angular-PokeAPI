@@ -31,7 +31,7 @@ ngOnInit(): void {
 @HostListener('window:scroll', [])
   onScroll(): void {
     if ( ( document.documentElement.clientHeight + window.scrollY ) 
-          >= document.documentElement.scrollHeight ) {
+          >= document.documentElement.scrollHeight - 20) {
   
       this.concatNextPage();
 

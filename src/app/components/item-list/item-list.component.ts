@@ -25,7 +25,7 @@ export class ItemListComponent implements OnInit {
   @HostListener('window:scroll', [])
   onScroll(): void {
     if ( ( document.documentElement.clientHeight + window.scrollY ) 
-          >= document.documentElement.scrollHeight ) {
+          >= document.documentElement.scrollHeight - 20) {
   
       this.concatNextItemPage();
 
