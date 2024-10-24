@@ -9,6 +9,7 @@ import { PokemonListComponent } from './components/pokemon-list/pokemon-list.com
 import { HeaderComponent } from './components/header/header.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
+import { ItemListComponent } from './components/item-list/item-list.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-de
     PokemonListComponent,
     HeaderComponent,
     PageNotFoundComponent,
-    PokemonDetailsComponent
+    PokemonDetailsComponent,
+    ItemListComponent
   ],
   imports: [
     BrowserModule,

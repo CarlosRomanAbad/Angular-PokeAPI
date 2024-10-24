@@ -1,0 +1,24 @@
+.pokemon-link, .item-link {
+    font-size: 1.5rem; 
+    padding: 0.5rem; 
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+#logo {
+    display: block;
+    margin: 0 auto;
+    transform: translateX(-10%); 
+}
+
+.row.align-items-center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem; 
+}
+
+.active-link {
+    color: rgba(0, 0, 0, 0.388); 
+}
