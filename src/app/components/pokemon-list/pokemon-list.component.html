@@ -10,12 +10,16 @@
                         <h5 class="card-title mt-2">{{pokemon.name}}</h5>
                         <p class="card-text">N° {{getPokemonId(pokemon.url)}}</p>
                         <div class="imagen-circulo shadow-lg">
-                            <img [src]="createImgUrl(getPokemonId(pokemon.url))" class="card-img-top" alt="${pokeName}">
+                            <a [routerLink]="['/pokemon', getPokemonId(pokemon.url)]">
+
+                                <img [src]="createImgUrl(getPokemonId(pokemon.url))" class="card-img-top" alt="${pokeName}">
+
+                            </a>
                         </div>
 
                         <div class="p-3">
                             <a class="text-decoration-none text-dark btn-ver-detalles py-1 px-2 rounded-3 border-0 shadow"
-                                href=""><span>Ver Detalles</span></a>
+                                [routerLink]="['/pokemon', getPokemonId(pokemon.url)]"><span>Ver Detalles</span></a>
                         </div>
                     </div>
                 </div>

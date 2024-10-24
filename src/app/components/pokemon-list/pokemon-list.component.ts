@@ -9,7 +9,6 @@ import { PokemonServiceService } from '../../services/pokemon-service.service';
 })
 export class PokemonListComponent implements OnInit{
 
-
 pokemonList: Pokemon[] = [];
 
 constructor(private pokemonService: PokemonServiceService ) { }
@@ -29,6 +28,7 @@ getPokemonId(url: string): number{
   return this.pokemonService.getPokemonId(url);
 
   }
+
   createImgUrl(id: number): string{
 
   return this.pokemonService.createImgUrl(id);

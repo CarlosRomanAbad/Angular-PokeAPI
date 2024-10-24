@@ -1,0 +1,59 @@
+<div class="container mt-3" id="data-content">
+<h3 class="text-center">Detalles del pokémon:</h3>
+            <div class="card mx-auto caja-ppal my-4">
+                <div class="card-header text-center ">
+                    <h5 class="card-title mb-0">{{pokemonDetails.name}} Nº{{pokemonDetails.id}}</h5>
+                </div>
+                <div class="card-body text-center">
+                    <div>
+                        <img [src]="createImgUrl()" 
+                            alt="Foto de {{pokemonDetails.name}}" class="img-fluid float-start fotoPokemon">
+                            
+                    </div>
+                    <ul class="list-group mt-3">
+                        <li class="list-group-item mb-1 p-3 fs-6 stats" style="width: 100%;"><strong>Altura:</strong>
+                            {{pokemonDetails.height}} cm</li>
+                        <li class="list-group-item mb-1 p-3 fs-6 stats" style="width: 100%;"><strong>Categoria:
+                            </strong>{{pokemonDetails.species.name}}</li>
+                        <li class="list-group-item mb-1 p-3 fs-6 stats" style="width: 100%;"><strong>Peso:</strong>
+                            {{pokemonDetails.height}} kg</li>
+                    </ul>
+                <div class="container-fluid">
+                    <h6 class="col-6 just mx-auto text-center">Ataques:</h6>
+                    <div class="col-12 btn-group borde-habilidades" role="group" aria-label="Ataques">
+                        @for(ability of abilities ; track ability.indexOf(ability) ){
+                            <button type="button" class="btn btn-especial fw-bold">{{ability}}</button>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="row text-center">
+                    <div class="col-12">
+                        <h6>Tipo</h6>
+                        @for(type of pokemonDetails.types ; track type.type.name){
+
+                            <p class="badge bg-light text-dark p-2 m-2">{{type.type.name}}</p>
+
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-3">
+                
+                @if(pokemonDetails.id > 1){
+
+                    <a [routerLink]="['/pokemon' , pokemonDetails.id-1]" class="btn">Pokémon Anterior</a>
+
+                }
+                @else{
+
+                    <div></div>
+
+                }
+                
+                <a [routerLink]="['/pokemon' , pokemonDetails.id+1]" class="btn">Siguiente Pokémon</a>
+            </div>
+            </div>
+</div>
