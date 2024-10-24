@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { PokemonServiceService } from '../../services/pokemon-service.service';
-import { Pokemon } from '../../interfaces/ipokemon';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-barra-busqueda',
@@ -8,16 +8,20 @@ import { Pokemon } from '../../interfaces/ipokemon';
   styleUrl: './barra-busqueda.component.css'
 })
 export class BarraBusquedaComponent {
+  @Input() pokeId: number = 0;
 
+  constructor(private pokemonService: PokemonServiceService, private router: Router) { }
 
-  pokemon : Pokemon = ''  ;
+  searchPokemonId() {
+   
 
-  constructor(private pokemonService: PokemonServiceService ) { }
+    let id = (document.getElementById('search-input') as HTMLInputElement).value;
+    
 
-
-  buscarPokemonById(id : number){
-    this.pokemonService.getPokemonId(id).subscribe((x: PokemonResponse) => {
-      this.pokemonList = x.results;
+    if (!isNaN(+id)) {
+      this.router.navigate(['/pokemon', id]);
+    } else {
+      console.log('No es un número');
     }
   }
 }
