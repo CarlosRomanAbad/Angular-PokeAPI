@@ -1,27 +1,47 @@
 import { Component, Input } from '@angular/core';
 import { PokemonServiceService } from '../../services/pokemon-service.service';
 import { Router } from '@angular/router';
+import { PokemonResponse } from '../../interfaces/ipokemon';
+import { PokemonDetails } from '../../interfaces/ipokemon-details';
 
 @Component({
   selector: 'app-barra-busqueda',
   templateUrl: './barra-busqueda.component.html',
-  styleUrl: './barra-busqueda.component.css'
+  styleUrls: ['./barra-busqueda.component.css']
 })
 export class BarraBusquedaComponent {
-  @Input() pokeId: number = 0;
 
+  pokeList: PokemonDetails[] = [];
   constructor(private pokemonService: PokemonServiceService, private router: Router) { }
 
   searchPokemonId() {
-   
+    let input = (document.getElementById('search-input') as HTMLInputElement).value.trim();
 
-    let id = (document.getElementById('search-input') as HTMLInputElement).value;
-    
+    if (input === '') {
+      alert('Ingrese el ID de un Pokemon o su nombre');
+      return;
+    }
 
-    if (!isNaN(+id)) {
-      this.router.navigate(['/pokemon', id]);
+    if (!isNaN(+input)) {
+      this.pokemonService.comprobarIdPokemon(+input).subscribe(isValid => {
+        if (!isValid) {
+          alert('El ID ingresado no es válido');
+          return;
+        }
+        this.router.navigate(['/pokemon', +input]);
+      });
     } else {
-      console.log('No es un número');
+      this.pokemonService.comprobarNombrePokemon(input).subscribe(isValid => {
+        if (!isValid) {
+          alert('El nombre ingresado no es válido');
+          return;
+        }
+        this.pokemonService.getPokemonDetailsByName(input).subscribe(
+          (data) => {
+            this.router.navigate(['/pokemon', data.id]);
+          }
+        );
+      });
     }
   }
 }

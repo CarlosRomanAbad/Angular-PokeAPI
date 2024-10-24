@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { PokemonResponse } from '../interfaces/ipokemon';
 import { PokemonDetails } from '../interfaces/ipokemon-details';
 import { Router } from '@angular/router';
+import { map, catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +26,8 @@ export class PokemonServiceService {
 
   };
 
+
+
   createImgUrl(id: number): string{
 
     return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
@@ -38,8 +42,29 @@ export class PokemonServiceService {
 
   getPokemon(id : number) : Observable<PokemonDetails>{
 
+    
     return this.http.get<PokemonDetails>(`https://pokeapi.co/api/v2/pokemon/${id}`);
-  } 
+  }
 
-  
+  getPokemonDetailsByName(name : string): Observable<PokemonDetails>{
+    
+    return this.http.get<PokemonDetails>(`https://pokeapi.co/api/v2/pokemon/${name}`);
+
+  }
+
+  comprobarIdPokemon(id: number): Observable<boolean> {
+    return this.http.get<PokemonDetails>(`https://pokeapi.co/api/v2/pokemon/${id}`).pipe(
+      map(() => true),
+      catchError(() => of(false))
+    )
+  }
+
+  comprobarNombrePokemon(name: string): Observable<boolean> {
+    return this.http.get<PokemonDetails>(`https://pokeapi.co/api/v2/pokemon/${name}`).pipe(
+      map(() => true),
+      catchError(() => of(false))
+    )
+  }
+
+
 }
