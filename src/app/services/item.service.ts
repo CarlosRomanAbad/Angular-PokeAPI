@@ -11,7 +11,7 @@ export class ItemService {
   constructor(private http: HttpClient) { }
 
   getAllItems(offset?:number): Observable<ItemResponse> {
-    return this.http.get<ItemResponse>(`https://pokeapi.co/api/v2/item?limit=12${offset ? `&offset=${offset}` : ''}`);
+    return this.http.get<ItemResponse>(`https://pokeapi.co/api/v2/item?limit=36${offset ? `&offset=${offset}` : ''}`);
   }
 
   getItemId(url: string): number {
