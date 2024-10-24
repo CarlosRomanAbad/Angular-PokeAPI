@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
 import { ItemListComponent } from './components/item-list/item-list.component';
+import { BarraBusquedaComponent } from './components/barra-busqueda/barra-busqueda.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ItemListComponent } from './components/item-list/item-list.component';
     HeaderComponent,
     PageNotFoundComponent,
     PokemonDetailsComponent,
-    ItemListComponent
+    ItemListComponent,
+    BarraBusquedaComponent
   ],
   imports: [
     BrowserModule,

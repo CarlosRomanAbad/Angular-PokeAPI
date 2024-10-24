@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pokemon, PokemonResponse } from '../../interfaces/ipokemon';
 import { PokemonServiceService } from '../../services/pokemon-service.service';
+import { BarraBusquedaComponent } from '../barra-busqueda/barra-busqueda.component';
 
 @Component({
   selector: 'app-pokemon-list',
