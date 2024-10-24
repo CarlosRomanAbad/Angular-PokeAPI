@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Item, ItemResponse } from '../../interfaces/item-list.interface';
 import { ItemService } from '../../services/item.service';
+import { offset } from '@popperjs/core';
 
 @Component({
   selector: 'app-item-list',
@@ -10,6 +11,8 @@ import { ItemService } from '../../services/item.service';
 export class ItemListComponent implements OnInit {
 
   itemList: Item[] = [];
+
+  offset: number = 12;
 
   constructor(private itemService: ItemService) { }
 
@@ -27,5 +30,16 @@ export class ItemListComponent implements OnInit {
     return this.itemService.createImgUrl(url);
   }
 
+  concatNextItemPage(): void{
+
+    this.itemService.getAllItems(this.offset).subscribe((x: ItemResponse) => {
+  
+      this.itemList.push(...x.results);
+  
+    });
+  
+    this.offset += 12;
+  
+  }
  
 }

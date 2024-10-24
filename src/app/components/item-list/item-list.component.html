@@ -6,7 +6,7 @@
           <div class="card shadow-lg h-100">
             <div class="card-body text-center">
               <h5><span class="badge badge-secondary mt-3 p-2 py-6 text-dark">{{item.name}}</span></h5>
-              <div class="imagen-circulo shadow-lg">
+              <div class="imagen-circulo shadow-lg mx-auto d-flex justify-content-center align-items-center" style="width: 50%; height: 60%;">
                 <img [src]="createImgUrl(item.name)" class="card-img-top" alt="{{ item.name }}">
               </div>
               <div class="p-3"></div>
@@ -15,4 +15,14 @@
         </a>
     }
     </div>
+
+    <div class="row col-6 mx-auto">
+      <div class="col-auto mx-auto shadow-lg rounded-3 my-4">
+        <button id="see-more" class="btn text-center p-2"
+          (click)="concatNextItemPage()">
+          Ver más
+      </button>
+      </div>
+    </div>
+
 </div>
