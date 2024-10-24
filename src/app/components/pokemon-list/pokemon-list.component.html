@@ -21,24 +21,28 @@
 
                         <div class="p-3">
                             <a class="text-decoration-none text-dark btn-ver-detalles py-1 px-2 rounded-3 border-0 shadow"
-                                [routerLink]="['/pokemon', getPokemonId(pokemon.url)]"><span>Ver Detalles</span></a>
+                                [routerLink]="['/pokemon', getPokemonId(pokemon.url)]">
+                                
+                                    <span>Ver detalles</span>
+                              
+                            </a>
                         </div>
                     </div>
                 </div>
             </a>
         </div>
-
+        
         }
 
     </div>
 
-    <div class="row col-6 mx-auto">
+    <!-- <div class="row col-6 mx-auto">
         <div class="col-auto mx-auto shadow-lg rounded-3 my-4">
           <button id="see-more" class="btn text-center p-2"
             (click)="concatNextPage()">
             Ver más
         </button>
         </div>
-      </div>
+    </div> -->
 
 </div>

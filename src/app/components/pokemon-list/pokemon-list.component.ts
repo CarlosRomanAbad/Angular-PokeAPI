@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Pokemon, PokemonResponse } from '../../interfaces/ipokemon';
 import { PokemonServiceService } from '../../services/pokemon-service.service';
 import { BarraBusquedaComponent } from '../barra-busqueda/barra-busqueda.component';
@@ -14,6 +14,8 @@ pokemonList: Pokemon[] = [];
 
 offset: number = 12;
 
+anchor: number = 0;
+
 constructor(private pokemonService: PokemonServiceService ) { }
 
 ngOnInit(): void {
@@ -25,6 +27,16 @@ ngOnInit(): void {
   });
 
 }
+
+@HostListener('window:scroll', [])
+  onScroll(): void {
+    if ( ( document.documentElement.clientHeight + window.scrollY ) 
+          >= document.documentElement.scrollHeight - 20) {
+  
+      this.concatNextPage();
+
+    }
+  }
 
 concatNextPage(): void{
 
@@ -44,7 +56,7 @@ getPokemonId(url: string): number{
 
   }
 
-  createImgUrl(id: number): string{
+createImgUrl(id: number): string{
 
   return this.pokemonService.createImgUrl(id);
 

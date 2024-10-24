@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Item, ItemResponse } from '../../interfaces/item-list.interface';
 import { ItemService } from '../../services/item.service';
 import { offset } from '@popperjs/core';
@@ -12,7 +12,7 @@ export class ItemListComponent implements OnInit {
 
   itemList: Item[] = [];
 
-  offset: number = 12;
+  offset: number = 36;
 
   constructor(private itemService: ItemService) { }
 
@@ -20,6 +20,16 @@ export class ItemListComponent implements OnInit {
     this.itemService.getAllItems().subscribe((data: ItemResponse) => {
       this.itemList = data.results;
     });
+  }
+
+  @HostListener('window:scroll', [])
+  onScroll(): void {
+    if ( ( document.documentElement.clientHeight + window.scrollY ) 
+          >= document.documentElement.scrollHeight - 20) {
+  
+      this.concatNextItemPage();
+
+    }
   }
 
   getItemId(url: string): number {
@@ -38,7 +48,7 @@ export class ItemListComponent implements OnInit {
   
     });
   
-    this.offset += 12;
+    this.offset += 36;
   
   }
  
