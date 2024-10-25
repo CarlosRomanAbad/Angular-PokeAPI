@@ -9,7 +9,7 @@
             <a href="" class="text-decoration-none text-dark">
                 <div class="card shadow-lg h-100">
                     <div class="card-body text-center">
-                        <h5 class="card-title mt-2">{{pokemon.name}}</h5>
+                        <h5 class="card-title mt-2">{{pokemon.name | titlecase}}</h5>
                         <p class="card-text">N° {{getPokemonId(pokemon.url)}}</p>
                         <div class="imagen-circulo shadow-lg">
                             <a [routerLink]="['/pokemon', getPokemonId(pokemon.url)]">

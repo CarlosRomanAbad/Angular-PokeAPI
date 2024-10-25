@@ -48,6 +48,8 @@ export class PokemonServiceService {
 
   getPokemonDetailsByName(name : string): Observable<PokemonDetails>{
     
+    name = name.toLowerCase();
+
     return this.http.get<PokemonDetails>(`https://pokeapi.co/api/v2/pokemon/${name}`);
 
   }
@@ -60,6 +62,9 @@ export class PokemonServiceService {
   }
 
   comprobarNombrePokemon(name: string): Observable<boolean> {
+
+    name = name.toLowerCase();
+
     return this.http.get<PokemonDetails>(`https://pokeapi.co/api/v2/pokemon/${name}`).pipe(
       map(() => true),
       catchError(() => of(false))
