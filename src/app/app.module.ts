@@ -11,6 +11,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-details.component';
 import { ItemListComponent } from './components/item-list/item-list.component';
 import { BarraBusquedaComponent } from './components/barra-busqueda/barra-busqueda.component';
+import { NavToTopButtonComponent } from './components/nav-to-top-button/nav-to-top-button.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BarraBusquedaComponent } from './components/barra-busqueda/barra-busque
     PageNotFoundComponent,
     PokemonDetailsComponent,
     ItemListComponent,
-    BarraBusquedaComponent
+    BarraBusquedaComponent,
+    NavToTopButtonComponent
   ],
   imports: [
     BrowserModule,
