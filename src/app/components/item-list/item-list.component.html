@@ -2,10 +2,10 @@
 <div class="container">
     <div class="row row-cols-2 row-cols-md-4 g-4 px-5" id="pokemon-container">
         @for(item of itemList ; track item){
-        <a href="" class="text-decoration-none text-dark">
+        <a class="text-decoration-none text-dark">
           <div class="card shadow-lg h-100">
             <div class="card-body text-center">
-              <h5><span class="badge badge-secondary mt-3 p-2 py-6 text-dark">{{item.name}}</span></h5>
+              <h5><span class="badge badge-secondary mt-3 p-2 py-6 text-dark">{{item.name | titlecase}}</span></h5>
               <div class="imagen-circulo shadow-lg mx-auto d-flex justify-content-center align-items-center" style="width: 50%; height: 60%;">
                 <img [src]="createImgUrl(item.name)" class="card-img-top" alt="{{ item.name }}">
               </div>
